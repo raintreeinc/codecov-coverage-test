@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run the tests
-        run: npm test -- --coverage
+#      - name: Run the tests
+#        run: npm test -- --coverage
 
       # Automate AWS CDK Deployments using Github Actions
 
