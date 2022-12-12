@@ -1,4 +1,4 @@
-name: CDK Deploy
+name: CDK Deploy test
 on: [push]
 jobs:
   cdk-deploy:
