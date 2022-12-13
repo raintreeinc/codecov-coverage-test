@@ -33,23 +33,30 @@ jobs:
         run: npm test -- --coverage
 
       # GitHub token
-      - name: Create a GitHub Token
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+#      - name: Create a GitHub Token
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ github.token }}
 
       # Check Coverage
       - name: validate coverage
+#        uses: devmasx/coverage-check-action@v1.2.0
+#        with:
+#          type: lcov
+#          result_path: coverage/lcov.info
+#          min_coverage: 90
+##          token: ${{ secrets.GITHUB_TOKEN }}
+##          token: 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
+#          token: ${{ github.token }}
+#          token: ${{ secrets.GH_TOKEN }}
+
         uses: devmasx/coverage-check-action@v1.2.0
         with:
-          type: lcov
-          result_path: coverage/lcov.info
-          min_coverage: 90
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          token: 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
-          token: ${{ github.token }}
-#          token: ${{ secrets.GH_TOKEN }}
+           type: simplecov
+           result_path: coverage/.last_run.json
+           min_coverage: 90
+           token: ${{ github.token }}
 
       # Code Coverage report
       - name: Code Coverage report
