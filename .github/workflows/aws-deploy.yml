@@ -22,6 +22,13 @@ jobs:
       - name: Run the tests
         run: npm test -- --coverage
 
+      # GitHub token
+      - name: Create a GitHub Token
+          id: create_release
+          uses: actions/create-release@v1
+          env:
+            GITHUB_TOKEN: ${{ github.token }}
+
       # Check Coverage
       - name: validate coverage
         uses: devmasx/coverage-check-action@v1.2.0
@@ -29,7 +36,7 @@ jobs:
           type: lcov
           result_path: coverage/lcov.info
           min_coverage: 90
-          token: ${{ secrets.TOKEN }}
+          token: ${{ github.token }}
 
       # Code Coverage report
       - name: Code Coverage report
