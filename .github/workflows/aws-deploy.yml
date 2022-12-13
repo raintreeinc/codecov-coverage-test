@@ -22,13 +22,14 @@ jobs:
       - name: Run the tests
         run: npm test -- --coverage
 
-      - name: Code Coverage
+      - name: Code Coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
             output: report-markdown
-        -uses: marocchino/sticky-pull-request-comment@v2
-        -with:
+      - name: Coverage OUtput
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
             message: ${{ steps.coverage.outputs.report }}
 
       # Automate AWS CDK Deployments using Github Actions
