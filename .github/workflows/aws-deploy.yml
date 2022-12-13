@@ -10,7 +10,7 @@ jobs:
       deployments: write
       id-token: write
       issues: write
-      metadata : read
+#      metadata : read
       discussions: write
       packages: write
       pages: write
