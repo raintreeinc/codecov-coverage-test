@@ -26,6 +26,7 @@ jobs:
     steps:
       - run: echo " Git Hub Secret Token ${{ secrets.GITHUB_TOKEN }} event."
       - run: echo " Git Hub Token ${{ github.token }} event."
+      - run: echo " The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
       # Tests and Coverage with Jest
       - name: Checkout repository
