@@ -3,8 +3,8 @@ on: [push]
 jobs:
   cdk-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
+#    permissions:
+#      issues: write
     strategy:
       matrix:
         node-version: [ 16.x ]
