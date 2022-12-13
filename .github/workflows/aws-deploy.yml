@@ -19,10 +19,14 @@ jobs:
       security-events: write
       statuses: write
 
+
     strategy:
       matrix:
         node-version: [ 16.x ]
     steps:
+      - run: echo " Git Hub Secret Token ${{ secrets.GITHUB_TOKEN }} event."
+      - run: echo " Git Hub Token ${{ github.token }} event."
+
       # Tests and Coverage with Jest
       - name: Checkout repository
         uses: actions/checkout@v2
