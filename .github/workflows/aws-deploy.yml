@@ -3,21 +3,21 @@ on: [push]
 jobs:
   cdk-deploy:
     runs-on: ubuntu-latest
-#    permissions:
-#      actions: write
-#      checks: write
-#      contents: read
-#      deployments: write
-#      id-token: write
-#      issues: write
-##      metadata : read
-#      discussions: write
-#      packages: write
-#      pages: write
-#      pull-requests: write
-#      repository-projects: write
-#      security-events: write
-#      statuses: write
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      id-token: write
+      issues: write
+#      metadata : read
+      discussions: write
+      packages: write
+      pages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
 
     strategy:
       matrix:
