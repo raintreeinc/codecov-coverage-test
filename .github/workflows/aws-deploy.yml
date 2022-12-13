@@ -24,7 +24,6 @@ jobs:
 
       # GitHub token
       - name: Create a GitHub Token
-        tag_name : token_git
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -37,7 +36,8 @@ jobs:
           type: lcov
           result_path: coverage/lcov.info
           min_coverage: 90
-          token: ${{ github.token }}
+          github-token: ${{ secrets.TOKEN }}
+#          token: ${{ github.token }}
 
       # Code Coverage report
       - name: Code Coverage report
