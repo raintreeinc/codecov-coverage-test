@@ -34,6 +34,7 @@ jobs:
 
       # GitHub token
       - name: Create a GitHub Token
+        tag_name
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -49,7 +50,7 @@ jobs:
 #          token: ${{ secrets.GITHUB_TOKEN }}
 #          token: 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
 #          token: ${{ github.token }}
-          github-token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
 
       # Code Coverage report
       - name: Code Coverage report
