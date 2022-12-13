@@ -29,7 +29,7 @@ jobs:
           type: lcov
           result_path: coverage/lcov.info
           min_coverage: 90
-          token: ${{ github.token }}
+          token: ${{ secrets.TOKEN }}
 
       # Code Coverage report
       - name: Code Coverage report
