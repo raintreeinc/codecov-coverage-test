@@ -4,7 +4,7 @@ jobs:
   cdk-deploy:
     runs-on: ubuntu-latest
     permissions:
-      issues: read|write|none
+      issues: write
     strategy:
       matrix:
         node-version: [ 16.x ]
