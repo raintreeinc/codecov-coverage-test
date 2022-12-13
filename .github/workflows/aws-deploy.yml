@@ -9,7 +9,6 @@ jobs:
       issues: read
       packages: none
 
-
     strategy:
       matrix:
         node-version: [ 16.x ]
@@ -49,7 +48,8 @@ jobs:
           min_coverage: 90
 #          token: ${{ secrets.GITHUB_TOKEN }}
 #          token: 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
-          token: ${{ github.token }}
+#          token: ${{ github.token }}
+          github-token: ${{ secrets.GH_TOKEN }}
 
       # Code Coverage report
       - name: Code Coverage report
