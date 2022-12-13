@@ -24,6 +24,7 @@ jobs:
 
       # GitHub token
       - name: Create a GitHub Token
+        tag_name : token_git
         id: create_release
         uses: actions/create-release@v1
         env:
