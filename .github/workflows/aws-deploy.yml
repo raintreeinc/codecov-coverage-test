@@ -24,10 +24,10 @@ jobs:
 
       # GitHub token
       - name: Create a GitHub Token
-          id: create_release
-          uses: actions/create-release@v1
-          env:
-            GITHUB_TOKEN: ${{ github.token }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       # Check Coverage
       - name: validate coverage
