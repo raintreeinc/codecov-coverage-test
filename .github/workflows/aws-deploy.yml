@@ -50,6 +50,14 @@ jobs:
         with:
             message: ${{ steps.coverage.outputs.report }}
 
+      # SonarCloud setup
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
       # Automate AWS CDK Deployments using Github Actions
       - name: Install CDK
         run: npm install -g aws-cdk
