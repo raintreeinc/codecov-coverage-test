@@ -37,13 +37,15 @@ jobs:
       - name: Installing jest
         run : npx jest --init
 
+      # additional libraries
+      - name: Additional libraries
+        run: npm install --save-dev ts-node ts-jest @types/jest
+
       # Init jest
       - name: Installing jest
         run: npx jest
 
-      # additional libraries
-      - name: Additional libraries
-        run: npm install --save-dev ts-node ts-jest @types/jest
+
 
       # Tests and Coverage with Jest
       - name: Run the tests
