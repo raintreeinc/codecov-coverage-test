@@ -40,7 +40,7 @@ jobs:
 #          GITHUB_TOKEN: ${{ github.token }}
 
       # Check Coverage
-      - name: validate coverage
+#      - name: validate coverage
 #        uses: devmasx/coverage-check-action@v1.2.0
 #        with:
 #          type: lcov
@@ -51,12 +51,13 @@ jobs:
 #          token: ${{ github.token }}
 #          token: ${{ secrets.GH_TOKEN }}
 
-        uses: devmasx/coverage-check-action@v1.2.0
-        with:
-           type: lcov
-           result_path: coverage/example.lcov
-           min_coverage: 90
-           token: ${{ github.token }}
+#      - name: validate coverage
+#        uses: devmasx/coverage-check-action@v1.2.0
+#        with:
+#           type: lcov
+#           result_path: coverage/example.lcov
+#           min_coverage: 90
+#           token: ${{ github.token }}
 
       # Code Coverage report
       - name: Code Coverage report
