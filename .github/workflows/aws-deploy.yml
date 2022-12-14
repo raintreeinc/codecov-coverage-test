@@ -70,7 +70,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
             message: ${{ steps.coverage.outputs.report }}
-        run: echo " Code Coverage Report ${{ steps.coverage.outputs.report }} ."
+      - run: echo " Code Coverage Report ${{ steps.coverage.outputs.report }} ."
 
       # Automate AWS CDK Deployments using Github Actions
 
