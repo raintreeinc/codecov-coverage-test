@@ -51,19 +51,19 @@ jobs:
       - name: Run Test
         id: test
         run: |
-           OUTPUT=$(rake test)
-           OUTPUT="${OUTPUT//'%'/'%25'}​【7,6 m】"
-           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
-           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
-           echo "result=$OUTPUT" >> $GITHUB_OUTPUT
+          OUTPUT=$(rake test)
+          OUTPUT="${OUTPUT//'%'/'%25'}​【7,6 m】"
+          OUTPUT="${OUTPUT//$'\n'/'%0A'}"
+          OUTPUT="${OUTPUT//$'\r'/'%0D'}"
+          echo "result=$OUTPUT" >> $GITHUB_OUTPUT
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
-        append: true
-        message: |
-           Test with ${{ github.sha }}.
-           ```
-           ${{ steps.test.outputs.result }}
-          ```
+          append: true
+          message: |
+            Test with ${{ github.sha }}.
+            ```
+            ${{ steps.test.outputs.result }}
+            ```
 
       # Automate AWS CDK Deployments using Github Actions
       - name: Install CDK
