@@ -50,7 +50,7 @@ jobs:
         with:
             message: ${{ steps.coverage.outputs.report }}
 
-      # SonarCloud setup
+      ## SonarCloud setup
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
