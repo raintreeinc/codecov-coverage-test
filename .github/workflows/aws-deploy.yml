@@ -46,8 +46,8 @@ jobs:
         with:
             message: ${{ steps.coverage.outputs.report }}
 
-      test:
-          ...
+#      test:
+#          ...
       - name: Run Test
         id: test
         run: |
