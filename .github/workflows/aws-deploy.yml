@@ -46,24 +46,7 @@ jobs:
         with:
             message: ${{ steps.coverage.outputs.report }}
 
-      # Check Coverage
-      - name: validate coverage
-        uses: devmasx/coverage-check-action@v1.2.0
-        with:
-          type: lcov
-          result_path: coverage/example.lcov
-          min_coverage: 90
-          token: ${{ github.token }}
-
-
       # Automate AWS CDK Deployments using Github Actions
-
-#      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-#      - uses: actions/checkout@v3
-      #      - name: Set up Node
-      #        uses: actions/setup-node@v3
-      #        with:
-      #          node-version: '16'
       - name: Install CDK
         run: npm install -g aws-cdk
       - name: Configure AWS credentials
@@ -72,11 +55,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-east-1"
-      #      - name: Install dependencies
-      #        run: npm install
+
+      # Bootstraping
       - name :  Bootstraping
         run :  cdk bootstrap --version6
+
+      # Synth stack
       - name: Synth stack
         run: cdk synth
+
+      # Deploy to AWS
       - name: Deploy to AWS
         run: cdk deploy --require-approval=never
