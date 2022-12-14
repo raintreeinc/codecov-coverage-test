@@ -3,6 +3,8 @@ on: [push]
 jobs:
   cdk-deploy:
     runs-on: ubuntu-latest
+
+    # Permissions
     permissions:
       contents: write
       pull-requests: write
@@ -17,7 +19,6 @@ jobs:
       - run: echo " Git Hub Token ${{ github.token }} event."
       - run: echo " The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
-      # Tests and Coverage with Jest
       - name: Checkout repository
         uses: actions/checkout@v2
 
@@ -29,35 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Tests and Coverage with Jest
       - name: Run the tests
         run: npm test -- --coverage
-
-      # GitHub token
-#      - name: Create a GitHub Token
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ github.token }}
-
-      # Check Coverage
-#      - name: validate coverage
-#        uses: devmasx/coverage-check-action@v1.2.0
-#        with:
-#          type: lcov
-#          result_path: coverage/lcov.info
-#          min_coverage: 90
-##          token: ${{ secrets.GITHUB_TOKEN }}
-##          token: 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
-#          token: ${{ github.token }}
-#          token: ${{ secrets.GH_TOKEN }}
-
-#      - name: validate coverage
-#        uses: devmasx/coverage-check-action@v1.2.0
-#        with:
-#           type: lcov
-#           result_path: coverage/example.lcov
-#           min_coverage: 90
-#           token: ${{ github.token }}
 
       # Code Coverage report
       - name: Code Coverage report
@@ -66,6 +41,7 @@ jobs:
         with:
             output: report-markdown
 
+      # Coverage report Output
       - name: Coverage Output
         uses: marocchino/sticky-pull-request-comment@v2
         with:
@@ -75,10 +51,10 @@ jobs:
        - name: validate coverage
          uses: devmasx/coverage-check-action@v1.2.0
          with:
-             type: lcov
-             result_path: coverage/example.lcov
-             min_coverage: 90
-             token: ${{ github.token }}
+            type: lcov
+            result_path: coverage/example.lcov
+            min_coverage: 90
+            token: ${{ github.token }}
 
 
       # Automate AWS CDK Deployments using Github Actions
