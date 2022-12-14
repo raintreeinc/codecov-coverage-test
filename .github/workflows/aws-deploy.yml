@@ -10,7 +10,6 @@ jobs:
       pull-requests: write
       issues: read
       packages: none
-
     strategy:
       matrix:
         node-version: [ 16.x ]
