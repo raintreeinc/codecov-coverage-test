@@ -29,23 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Installing jest
-      - name: Installing jest
-        run: npm install --save-dev jest
-
       # Init jest
-      - name: Installing jest
-        run : npx jest --init
-
-      # additional libraries
-      - name: Additional libraries
-        run: npm install --save-dev ts-node ts-jest @types/jest
-
-      # Init jest
-      - name: Installing jest
+      - name: Validate jest
         run: npx jest
-
-
 
       # Tests and Coverage with Jest
       - name: Run the tests
