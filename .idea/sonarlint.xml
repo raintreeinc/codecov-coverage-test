@@ -3,6 +3,6 @@
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
     <option name="projectKey" value="raintreeinc_aws-cdk-github-action-test" />
-    <option name="serverId" value="raintree" />
+    <option name="serverId" value="ci-cd" />
   </component>
 </project>
