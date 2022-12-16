@@ -51,6 +51,8 @@ jobs:
           message: ${{ steps.coverage.outputs.report }}
 
       ## SonarCloud setup
+      - name: Clone Repository
+        uses: actions/checkout@v2
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
