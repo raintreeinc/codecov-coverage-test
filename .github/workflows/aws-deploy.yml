@@ -54,11 +54,11 @@ jobs:
           message: ${{ steps.coverage.outputs.report }}
 
       ## SonarCloud setup
-      - name: Clone Repository
-        uses: actions/checkout@v2
-        with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
-          fetch-depth: 0
+#      - name: Clone Repository
+#        uses: actions/checkout@v2
+#        with:
+#          # Disabling shallow clone is recommended for improving relevancy of reporting
+#          fetch-depth: 0
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
