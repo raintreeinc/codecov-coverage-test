@@ -1,4 +1,4 @@
-name: CDK Deploy 1
+name: CI/CD Pipeline
 on: [push]
 jobs:
   cdk-deploy:
@@ -42,13 +42,13 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
-            output: report-markdown
+          output: report-markdown
 
       # Coverage report Output
       - name: Coverage Output
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-            message: ${{ steps.coverage.outputs.report }}
+          message: ${{ steps.coverage.outputs.report }}
 
       ## SonarCloud setup
       - name: SonarCloud Scan
