@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
-    <option name="projectKey" value="raintreeinc_patient-portal" />
+    <option name="projectKey" value="raintreeinc_aws-cdk-github-action-test" />
     <option name="serverId" value="raintree" />
   </component>
 </project>
